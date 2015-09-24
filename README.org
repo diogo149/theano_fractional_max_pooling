@@ -1,0 +1,24 @@
+* fractional max pooling
+implementation of "Fractional Max-Pooling" (http://arxiv.org/abs/1412.6071) in Theano
+* What is done?
+- disjoint pseudorandom fractional max pooling for 2D images
+* TODOs
+- generic version
+  - inputs:
+    - shape numerators
+    - shape denominators
+  - how?
+    - calculate output shape
+    - calculate strides for each dim
+      - eg. 1,1,1,2,2,2,2,1
+    - strides determine top-left corner
+    - pool size determines how much to pool
+      - if None, same as strides
+  - op inputs:
+    - img
+    - img shape
+    - a
+    - b
+  - output:
+    - new img
+- ND-version
