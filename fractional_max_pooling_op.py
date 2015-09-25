@@ -274,3 +274,10 @@ if __name__ == "__main__":
     print np.array(bar[0, 0, :3, :3])
     print np.array(inp.eval()[0, 0, :4, :4])
     print choo[0, 0, :4, :4]
+
+    def fun(x):
+        return DisjointPseudorandomFractionalMaxPooling2DOp(1.414, 0.5)(x)
+
+    T.verify_grad(fun,
+                  [np.arange(25).reshape(1, 1, 5, 5).astype(fX)],
+                  rng=np.random)
